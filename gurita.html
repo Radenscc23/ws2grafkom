@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="pastel">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@2.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>WS 02</title>
+      </head>
+<body>
+
+<div class="flex gap-8 p-10">
+<div>
+    <canvas id="gl-canvas" width="512"" height="512" class="rounded-lg"> </canvas>
+</div>
+
+<div class="w-full">
+<div class="flex gap-4">
+    <button class="btn mb-4" id= "animate">Animation: Off</button>
+    <button class="btn btn-primary mb-4" id= "reset">Reset</button>
+</div>
+
+<div> body angle -180 
+    <input class="range range-xs w-1/2" id="slider0" type="range" min="-180" max="180" step="10" value="0"/> 180
+</div><br/>
+
+<div style="column-count: 2;">
+    
+<div> whole upper arm angle 
+<br/> 120 <input class="range range-xs w-1/2" id="sliderArmL" type="range" min="120" max="180" step210" value="120"/> 180
+</div><br/>
+
+<div> (1) upper arm  120 
+<input class="range range-xs w-1/2" id="slider1a" type="range" min="120" max="180" step="2" value="120"/> 180
+</div><br/>
+
+<div> (1) lower arm  -180 
+<input class="range range-xs w-1/2" id="slider1b" type="range" min="-180" max="180" step="10" value="60"/> 180
+</div><br/>
+
+<div> (2) upper arm  120 
+<input class="range range-xs w-1/2" id="slider2a" type="range" min="120" max="180" step="2" value="120"/> 180
+</div><br/>
+
+<div> (2) lower arm  -180 
+<input class="range range-xs w-1/2" id="slider2b" type="range" min="-180" max="180" step="10" value="60"/> 180
+</div><br/>
+
+<div> (3) upper arm  120 
+<input class="range range-xs w-1/2" id="slider3a" type="range" min="120" max="180" step="2" value="120"/> 180
+</div><br/>
+
+<div> (3) lower arm  -180 
+<input class="range range-xs w-1/2" id="slider3b" type="range" min="-180" max="180" step="10" value="60"/> 180
+</div><br/>
+
+<div> (4) upper arm  120 
+<input class="range range-xs w-1/2" id="slider4a" type="range" min="120" max="180" step="2" value="120"/> 180
+</div><br/>
+
+<div> (4) lower arm  -180 
+<input class="range range-xs w-1/2" id="slider4b" type="range" min="-180" max="180" step="10" value="60"/> 180
+</div><br/>
+
+<div> whole lower arm angle 
+<br/> -180 <input class="range range-xs w-1/2" id="sliderArmU" type="range" min="-180" max="180" step="10" value="60"/> 180
+</div><br/>
+
+<div> (5) upper arm  120 
+<input class="range range-xs w-1/2" id="slider5a" type="range" min="120" max="180" step="2" value="120"/> 180
+</div><br/>
+
+<div> (5) lower arm  -180 
+<input class="range range-xs w-1/2" id="slider5b" type="range" min="-180" max="180" step="10" value="60"/> 180
+</div><br/>
+
+<div> (6) upper arm  120 
+<input class="range range-xs w-1/2" id="slider6a" type="range" min="120" max="180" step="2" value="120"/> 180
+</div><br/>
+
+<div> (6) lower arm  -180 
+<input class="range range-xs w-1/2" id="slider6b" type="range" min="-180" max="180" step="10" value="60"/> 180
+</div><br/>
+
+<div> (7) upper arm  120 
+<input class="range range-xs w-1/2" id="slider7a" type="range" min="120" max="180" step="2" value="120"/> 180
+</div><br/>
+
+<div> (7) lower arm  -180 
+<input class="range range-xs w-1/2" id="slider7b" type="range" min="-180" max="180" step="10" value="60"/> 180
+</div><br/>
+
+<div> (8) upper arm  120 
+<input class="range range-xs w-1/2" id="slider8a" type="range" min="120" max="180" step="2" value="120"/> 180
+</div><br/>
+
+<div> (8) lower arm  -180 
+<input class="range range-xs w-1/2" id="slider8b" type="range" min="-180" max="180" step="10" value="60"/> 180
+</div><br/>
+</div>
+</div>
+</div>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+#version 300 es
+
+in vec4 aPosition;
+in vec4 aColor;
+out vec4 vColor;
+
+uniform mat4 modelViewMatrix;
+uniform mat4 projectionMatrix;
+
+void main()
+{
+    vColor = aColor;
+    gl_Position = projectionMatrix * modelViewMatrix * aPosition;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+#version 300 es
+
+precision mediump float;
+
+in vec4 vColor;
+out vec4 fColor;
+
+void main()
+{
+    fColor = vColor;
+}
+</script>
+
+<script src="../Common/initShaders.js"></script>
+<script src="../Common/MVnew.js"></script>
+<script src="gurita.js"></script>
+
+
+</body>
+</html>
