@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="rotatingSquare3.css">
+    <title>Robotic Arm</title>
+  </head>
+
+  <body onload="main()">
+	<div class="container-fluid text-center p-5">
+		<canvas id="webgl" width="400" height="400">
+			Please use a browser that supports WebGL Canvas
+		</canvas>
+		<div class="mt-3">
+			<p>&larr;&rarr;: arm rotation</p>
+			<p>&uarr;&darr;: elbow rotation</p>
+			<p>xz: wrist rotation</p>
+			<p>cv: finger rotation</p>
+		</div>
+	</div>
+    
+    <script src="/scripts/webgl-utils.js"></script>
+    <script src="/scripts/webgl-debug.js"></script>
+    <script src="/scripts/cuon-utils.js"></script>
+    <script src="/scripts/cuon-matrix.js"></script>
+    <script src="/scripts/robotic-arm.js"></script>
+  </body>
+</html>
