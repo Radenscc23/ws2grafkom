@@ -170,6 +170,63 @@ function initVertexBuffers(gl){
         -1.0,-1.0,-0.5,  -1.0,-1.0, 0.5,  -1.0, 1.0, 0.5,  -1.0, 1.0,-0.5,
     ]);
 
+    var vertices_finger_2= new Float32Array([  // Fingers(1x2x1)
+        // Front
+        -4.0, 1.0, 0.5,   1.0, 1.0, 0.5,   1.0,-1.0, 0.5,  -1.0,-1.0, 4.0,
+        // Back
+        -4.0, 1.0,-0.5,   1.0, 1.0,-0.5,   1.0,-1.0,-0.5,  -1.0,-1.0,-4.0,
+        // Top
+        -4.0, 1.0,-0.5,  -1.0, 1.0, 0.5,   1.0, 1.0, 0.5,   1.0, 1.0,-4.0,
+        // Bottom
+        -4.0,-1.0,-0.5,  -1.0,-1.0, 0.5,   1.0,-1.0, 0.5,   1.0,-1.0,-4.0,
+        // Right
+        4.0,-1.0,-0.5,   1.0,-1.0, 0.5,   1.0, 1.0, 0.5,   1.0, 1.0,-4.0,
+        // Left
+        -4.0,-1.0,-0.5,  -1.0,-1.0, 0.5,  -1.0, 1.0, 0.5,  -1.0, 1.0,-4.0,
+    ]);
+    var vertices_finger_3= new Float32Array([  // Fingers(1x2x1)
+        // Front
+        -2.0, 1.0, 0.5,   1.0, 1.0, 0.5,   1.0,-1.0, 0.5,  -1.0,-1.0, 2.0,
+        // Back
+        -2.0, 1.0,-0.5,   1.0, 1.0,-0.5,   1.0,-1.0,-0.5,  -1.0,-1.0,-2.0,
+        // Top
+        -2.0, 1.0,-0.5,  -1.0, 1.0, 0.5,   1.0, 1.0, 0.5,   1.0, 1.0,-2.0,
+        // Bottom
+        -2.0,-1.0,-0.5,  -1.0,-1.0, 0.5,   1.0,-1.0, 0.5,   1.0,-1.0,-20,
+        // Right
+        2.0,-1.0,-0.5,   1.0,-1.0, 0.5,   1.0, 1.0, 0.5,   1.0, 1.0,-2.0,
+        // Left
+        -2.0,-1.0,-0.5,  -1.0,-1.0, 0.5,  -1.0, 1.0, 0.5,  -1.0, 1.0,-2.0,
+    ]);
+    var vertices_finger_4= new Float32Array([  // Fingers(1x2x1)
+        // Front
+        -3.0, 1.0, 0.5,   1.0, 1.0, 0.5,   1.0,-1.0, 0.5,  -1.0,-1.0, 3.0,
+        // Back
+        -3.0, 1.0,-0.5,   1.0, 1.0,-0.5,   1.0,-1.0,-0.5,  -1.0,-1.0,-3.0,
+        // Top
+        -3.0, 1.0,-0.5,  -1.0, 1.0, 0.5,   1.0, 1.0, 0.5,   1.0, 1.0,-3.0,
+        // Bottom
+        -3.0,-1.0,-0.5,  -1.0,-1.0, 0.5,   1.0,-1.0, 0.5,   1.0,-1.0,-3.0,
+        // Right
+        3.0,-1.0,-0.5,   1.0,-1.0, 0.5,   1.0, 1.0, 0.5,   1.0, 1.0,-3.0,
+        // Left
+        -3.0,-1.0,-0.5,  -1.0,-1.0, 0.5,  -1.0, 1.0, 0.5,  -1.0, 1.0,-3.0,
+    ]);
+    var vertices_finger_5 = new Float32Array([  // Fingers(1x2x1)
+        // Front
+        -1.0, 1.0, 0.5,   1.0, 1.0, 0.5,   1.0,-1.0, 0.5,  -1.0,-1.0, 1.0,
+        // Back
+        -1.0, 1.0,-0.5,   1.0, 1.0,-0.5,   1.0,-1.0,-0.5,  -1.0,-1.0,-1.0,
+        // Top
+        -1.0, 1.0,-0.5,  -1.0, 1.0, 0.5,   1.0, 1.0, 0.5,   1.0, 1.0,-1.0,
+        // Bottom
+        -1.0,-1.0,-0.5,  -1.0,-1.0, 0.5,   1.0,-1.0, 0.5,   1.0,-1.0,-1.0,
+        // Right
+        1.0,-1.0,-0.5,   1.0,-1.0, 0.5,   1.0, 1.0, 0.5,   1.0, 1.0,-1.0,
+        // Left
+        -1.0,-1.0,-0.5,  -1.0,-1.0, 0.5,  -1.0, 1.0, 0.5,  -1.0, 1.0,-1.0,
+    ]);
+
     // Normal
     var normals = new Float32Array([
         1.0, 0.0, 0.0,  1.0, 0.0, 0.0,  1.0, 0.0, 0.0,  1.0, 0.0, 0.0, // v0-v1-v2-v3 front
@@ -195,6 +252,10 @@ function initVertexBuffers(gl){
   g_arm2Buffer = initArrayBufferForLaterUse(gl, vertices_arm2, 3, gl.FLOAT);
   g_palmBuffer = initArrayBufferForLaterUse(gl, vertices_palm, 3, gl.FLOAT);
   g_fingerBuffer = initArrayBufferForLaterUse(gl, vertices_finger, 3, gl.FLOAT);
+  g_fingerBuffer = initArrayBufferForLaterUse(gl, vertices_finger_2, 3, gl.FLOAT);
+  g_fingerBuffer = initArrayBufferForLaterUse(gl, vertices_finger_3, 3, gl.FLOAT);
+  g_fingerBuffer = initArrayBufferForLaterUse(gl, vertices_finger_4, 3, gl.FLOAT);
+  g_fingerBuffer = initArrayBufferForLaterUse(gl, vertices_finger_5, 3, gl.FLOAT);
   if (!g_baseBuffer || !g_arm1Buffer || !g_arm2Buffer || !g_palmBuffer || !g_fingerBuffer) return -1;
 
   // Write normals to a buffer, assign it to a_Normal and enable it
